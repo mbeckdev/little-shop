@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import styles from './app.module.css';
 
 import React from 'react';
 // import App from './App';
-import './App.css';
+// import './App.css';
 import Navbar from './Navbar';
 import Shop from './pages/Shop';
 import Home from './pages/Home';
@@ -10,7 +11,7 @@ import Home from './pages/Home';
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
-      <div className="app">
+      <div className={styles.app}>
         <Navbar />
         <Routes>
           {/* <Route index element={<Navbar />} /> */}

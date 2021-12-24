@@ -9,7 +9,7 @@ const Shop = () => {
     <div className={styles.shop}>
       <div className={styles.shoppingCartIconBar}>
         <div className={styles.iconContainer}>
-          <div id={styles.numberInCart}>24</div>
+          <div id={styles.numberInCart}>23</div>
           <div className={styles.shoppingCartIcon}>
             <FontAwesomeIcon
               icon={faShoppingCart}
