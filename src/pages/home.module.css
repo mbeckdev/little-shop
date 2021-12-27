@@ -1,0 +1,53 @@
+/* Typically in css you use naming conventions with dashes */
+/* .some-class-name */
+/* but since modules get used with javascript somewhere, they */
+/* recommend using camelCase instead because the dashes don't work*/
+
+@value colors: "../colors.css";
+@value primary, secondary, green1, green2, green3, pinkish from colors;
+
+/* import thePic from "../assets/background-plants.jpg"; */
+
+#home {
+  /* src: url('/assets/background-plants.jpg'); */
+  background-image: url('../assets/background-plants.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  /* font-size: xx-large; */
+  font-size: 60px;
+}
+
+#titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: primary;
+  text-shadow: 1px 1px 3px secondary;
+
+  background: radial-gradient(green3, green3, rgba(8, 75, 17, 0) 70%);
+
+  padding: 2rem 8rem;
+}
+
+p {
+  letter-spacing: -0.01rem;
+  font-weight: 700;
+}
+
+button {
+  margin-top: 1rem;
+}
