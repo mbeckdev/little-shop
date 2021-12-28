@@ -1,0 +1,27 @@
+/* Typically in css you use naming conventions with dashes */
+/* .some-class-name */
+/* but since modules get used with javascript somewhere, they */
+/* recommend using camelCase instead because the dashes don't work*/
+
+.shopItem {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  /* border: 3px solid red; */
+  width: 300px;
+
+  margin: 0 10px 15px 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.shopItemTitle {
+  font-size: x-large;
+}
+
+/* .shopItemPrice {
+} */
