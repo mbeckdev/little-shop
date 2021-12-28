@@ -14,19 +14,68 @@ import pic7 from '../assets/items/plant7.jpg';
 import pic8 from '../assets/items/plant8.jpg';
 
 import ShopItem from '../components/ShopItem';
+import uniqid from 'uniqid';
 
 function Shop() {
   const itemPics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
 
   const allItems = [
-    { name: 'plant1', img: pic1, price: 19.99, altText: 'picture of a plant' },
-    { name: 'plant2', img: pic2, price: 19.99, altText: 'picture of a plant' },
-    { name: 'plant3', img: pic3, price: 19.99, altText: 'picture of a plant' },
-    { name: 'plant4', img: pic4, price: 29.99, altText: 'picture of a plant' },
-    { name: 'plant5', img: pic5, price: 19.99, altText: 'picture of a plant' },
-    { name: 'plant6', img: pic6, price: 19.99, altText: 'picture of a plant' },
-    { name: 'plant7', img: pic7, price: 19.99, altText: 'picture of a plant' },
-    { name: 'plant8', img: pic8, price: 19.99, altText: 'picture of a plant' },
+    {
+      name: 'plant1',
+      img: pic1,
+      price: 19.99,
+      altText: 'picture of a plant',
+      id: uniqid(),
+    },
+    {
+      name: 'plant2',
+      img: pic2,
+      price: 19.99,
+      altText: 'picture of a plant',
+      id: uniqid(),
+    },
+    {
+      name: 'plant3',
+      img: pic3,
+      price: 19.99,
+      altText: 'picture of a plant',
+      id: uniqid(),
+    },
+    {
+      name: 'plant4',
+      img: pic4,
+      price: 29.99,
+      altText: 'picture of a plant',
+      id: uniqid(),
+    },
+    {
+      name: 'plant5',
+      img: pic5,
+      price: 19.99,
+      altText: 'picture of a plant',
+      id: uniqid(),
+    },
+    {
+      name: 'plant6',
+      img: pic6,
+      price: 19.99,
+      altText: 'picture of a plant',
+      id: uniqid(),
+    },
+    {
+      name: 'plant7',
+      img: pic7,
+      price: 19.99,
+      altText: 'picture of a plant',
+      id: uniqid(),
+    },
+    {
+      name: 'plant8',
+      img: pic8,
+      price: 19.99,
+      altText: 'picture of a plant',
+      id: uniqid(),
+    },
   ];
 
   const handleItemClick = (e) => {
@@ -58,6 +107,8 @@ function Shop() {
             name={item.name}
             price={item.price}
             handleItemClick={handleItemClick}
+            key={item.id}
+            id={item.id}
           />
         ))}
       </div>
