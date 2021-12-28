@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  height: 90vh;
+  height: 95vh;
   width: 100%;
   background-size: cover;
 
@@ -27,6 +27,9 @@
 h1 {
   /* font-size: xx-large; */
   font-size: 60px;
+  font-family: 'Playfair Display', serif;
+  /* font-family: 'Fredericka the Great', cursive; */
+  font-weight: 700;
 }
 
 #titleContainer {
@@ -41,6 +44,15 @@ h1 {
   background: radial-gradient(green3, green3, rgba(8, 75, 17, 0) 70%);
 
   padding: 2rem 8rem;
+}
+
+.mainTitle {
+  /* font-family: 'Fredericka the Great', cursive; */
+  /* font-family: 'Noto Sans', sans-serif; */
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 64px;
+  /* font-family: 'Roboto', sans-serif; */
 }
 
 p {

@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div id={styles.home}>
       <div id={styles.titleContainer}>
-        <h1>Mini Jungle</h1>
+        <h2 className={styles.mainTitle}>Mini Jungle</h2>
         <p>Make it look like a jungle wherever you are</p>
         <button>Shop Now</button>
       </div>
