@@ -49,7 +49,7 @@ function Shop() {
         </div>
       </div>
 
-      <h2>SHOP</h2>
+      <h2 className={styles.pageTitle}>SHOP</h2>
       <div className={styles.shopItems}>
         {allItems.map((item) => (
           <ShopItem
