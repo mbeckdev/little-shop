@@ -7,6 +7,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Shop from './pages/Shop';
 import Home from './pages/Home';
+import Item from './pages/Item';
 
 const RouteSwitch = () => {
   return (
@@ -15,9 +16,13 @@ const RouteSwitch = () => {
         <Navbar />
         <Routes>
           {/* <Route index element={<Navbar />} /> */}
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
+
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:itemId" element={<Item />} />
+          {/* <Route path="/shop/:id" element={<Item itemId={}/>} /> */}
+          {/* <Route path="/item" element={<Item />} /> */}
         </Routes>
       </div>
     </BrowserRouter>
@@ -25,3 +30,9 @@ const RouteSwitch = () => {
 };
 
 export default RouteSwitch;
+
+{
+  /* <Route path="shop" element={<Shop />}>
+  <Route path="/item:itemId" element={<Item />} />
+</Route> */
+}

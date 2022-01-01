@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './shop.module.css';
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
@@ -17,7 +18,7 @@ import ShopItem from '../components/ShopItem';
 import uniqid from 'uniqid';
 
 function Shop() {
-  const itemPics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
+  // const itemPics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
 
   const allItems = [
     {
@@ -78,9 +79,12 @@ function Shop() {
     },
   ];
 
-  const handleItemClick = (e) => {
+  const handleItemClick = (e, thisItem) => {
     e.preventDefault();
-    console.log('handle item click');
+    console.log('handle item click', thisItem);
+    // <Link to="/home">
+    //   <li>Shop</li>
+    // </Link>;
   };
 
   return (
@@ -102,13 +106,10 @@ function Shop() {
       <div className={styles.shopItems}>
         {allItems.map((item) => (
           <ShopItem
-            imgPath={item.img}
-            altText={item.altText}
-            name={item.name}
-            price={item.price}
-            handleItemClick={handleItemClick}
+            item={item}
             key={item.id}
-            id={item.id}
+            imgPath={item.img}
+            handleItemClick={handleItemClick}
           />
         ))}
       </div>
@@ -117,3 +118,10 @@ function Shop() {
 }
 
 export default Shop;
+
+{
+  /* <Link to="/home" key={item.id}> */
+}
+{
+  /* </Link> */
+}
