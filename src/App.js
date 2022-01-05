@@ -21,8 +21,6 @@ const RouteSwitch = () => {
 
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:itemId" element={<Item />} />
-          {/* <Route path="/shop/:id" element={<Item itemId={}/>} /> */}
-          {/* <Route path="/item" element={<Item />} /> */}
         </Routes>
       </div>
     </BrowserRouter>
@@ -30,9 +28,3 @@ const RouteSwitch = () => {
 };
 
 export default RouteSwitch;
-
-{
-  /* <Route path="shop" element={<Shop />}>
-  <Route path="/item:itemId" element={<Item />} />
-</Route> */
-}

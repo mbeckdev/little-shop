@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './shopItem.module.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, NavLink } from 'react-router-dom';
 
 function ShopItem(props) {
   const { item, imgPath, handleItemClick } = props;
@@ -11,21 +11,31 @@ function ShopItem(props) {
   const { itemId } = useParams();
 
   return (
-    <div
-      className={styles.shopItem}
-      onClick={(e) => {
-        handleItemClick(e, item);
-      }}
-    >
-      <Link to="/item">
+    <NavLink key={item.id} to={`/shop/${item.name}`}>
+      <div
+        className={(styles.shopItem, 'shopItem')}
+        // onClick={(e) => {
+        //   handleItemClick(e, item);
+        // }}
+      >
         <div className={styles.shopItemContainer}>
           <img src={imgPath} alt={item.altText} />
           <div className={styles.shopItemTitle}>{item.name}</div>
           <div className={styles.shopItemPrice}>${item.price}</div>
         </div>
-      </Link>
-    </div>
+      </div>
+    </NavLink>
   );
 }
 
 export default ShopItem;
+
+{
+  /* <Link to="/item">
+          <div className={styles.shopItemContainer}>
+            <img src={imgPath} alt={item.altText} />
+            <div className={styles.shopItemTitle}>{item.name}</div>
+            <div className={styles.shopItemPrice}>${item.price}</div>
+          </div>
+        </Link> */
+}

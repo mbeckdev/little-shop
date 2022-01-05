@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './shop.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
@@ -107,17 +107,26 @@ function Shop() {
         {allItems.map((item) => (
           <ShopItem
             item={item}
-            key={item.id}
             imgPath={item.img}
             handleItemClick={handleItemClick}
           />
         ))}
       </div>
+      <Outlet />
     </div>
   );
 }
 
 export default Shop;
+
+{
+  /* <ShopItem
+              item={item}
+              key={item.id}
+              imgPath={item.img}
+              handleItemClick={handleItemClick}
+            /> */
+}
 
 {
   /* <Link to="/home" key={item.id}> */
