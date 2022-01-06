@@ -11,7 +11,14 @@ function ShopItem(props) {
   const { itemId } = useParams();
 
   return (
-    <NavLink key={item.id} to={`/shop/${item.name}`}>
+    <NavLink
+      key={item.id}
+      to={`/shop/${item.name}`}
+      state={{
+        item: item,
+        imgPath: imgPath,
+      }}
+    >
       <div
         className={(styles.shopItem, 'shopItem')}
         // onClick={(e) => {
