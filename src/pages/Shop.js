@@ -87,6 +87,11 @@ function Shop() {
     // </Link>;
   };
 
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    console.log('Add to cart clicked from shopitem');
+  };
+
   return (
     <div className={styles.shop}>
       <div className={styles.shoppingCartIconBar}>
@@ -102,15 +107,21 @@ function Shop() {
         </div>
       </div>
 
-      <h2 className={styles.pageTitle}>SHOP</h2>
-      <div className={styles.shopItems}>
-        {allItems.map((item) => (
-          <ShopItem
-            item={item}
-            imgPath={item.img}
-            handleItemClick={handleItemClick}
-          />
-        ))}
+      <div className={styles.itemsAndCartContainer}>
+        <div className={styles.itemsAndTitle}>
+          <h2 className={styles.pageTitle}>SHOP</h2>
+          <div className={styles.shopItems}>
+            {allItems.map((item) => (
+              <ShopItem
+                item={item}
+                imgPath={item.img}
+                handleItemClick={handleItemClick}
+                handleAddToCart={handleAddToCart}
+              />
+            ))}
+          </div>
+        </div>
+        {true} && <div>cart hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</div>}
       </div>
       <Outlet />
     </div>

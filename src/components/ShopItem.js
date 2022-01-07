@@ -3,7 +3,7 @@ import styles from './shopItem.module.css';
 import { Link, useParams, NavLink } from 'react-router-dom';
 
 function ShopItem(props) {
-  const { item, imgPath, handleItemClick } = props;
+  const { item, imgPath, handleAddToCart } = props;
 
   // console.log('shopitem', item);
   // console.log(imgPath);
@@ -29,6 +29,9 @@ function ShopItem(props) {
           <img src={imgPath} alt={item.altText} />
           <div className={styles.shopItemTitle}>{item.name}</div>
           <div className={styles.shopItemPrice}>${item.price}</div>
+          <button className="btn" onClick={handleAddToCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </NavLink>
