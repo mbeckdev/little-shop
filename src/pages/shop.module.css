@@ -18,18 +18,22 @@
 }
 
 .pageTitle {
-  font-size: 60px;
+  font-size: 24px;
   font-family: 'Playfair Display', serif;
   /* font-family: 'Fredericka the Great', cursive; */
   font-weight: 700;
 
   position: absolute;
-
-  top: -2.5rem;
+  top: 0;
 }
 
 .itemsAndCartContainer {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+  border: 1px solid pink;
+  width: 100%;
 }
 
 .itemsAndTitle {
@@ -39,6 +43,8 @@
 
   /* border: 1px solid red; */
   position: relative;
+  border: 1px solid green;
+  width: 100%;
 }
 
 /* ------------------ */
@@ -49,24 +55,82 @@
   display: flex;
   flex-wrap: wrap;
 
-  width: 320px;
+  /* width: 320px; */
+  width: 70px;
   color: primary;
 
   margin-top: 45px;
+  background-color: blue;
 }
 
-@media only screen and (min-width: 650px) {
+@media only screen and (min-width: 480px) {
   .shopItems {
-    width: 640px;
+    width: 200px;
+  }
+  .pageTitle {
+    font-size: 60px;
+    top: -2.5rem;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .shopItems {
+    width: 320px;
   }
 }
 @media only screen and (min-width: 960px) {
   .shopItems {
-    width: 960px;
+    width: 640px;
   }
 }
 @media only screen and (min-width: 1280px) {
   .shopItems {
+    width: 960px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .shopItems {
+    width: 1280px;
+  }
+}
+
+.shopItemsNoneInCart {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 70px;
+  /* Note: can't change shopItems padding because of css module scope */
+  /*       so to fix tiny looking scale here, 
+           should use 2 different components with separate css files. 
+           not just use different classNames */
+  color: primary;
+
+  margin-top: 45px;
+  background-color: blue;
+}
+
+@media only screen and (min-width: 320px) {
+  .shopItemsNoneInCart {
+    width: 70px;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .shopItemsNoneInCart {
+    width: 200px;
+  }
+}
+@media only screen and (min-width: 640px) {
+  .shopItemsNoneInCart {
+    width: 640px;
+  }
+}
+@media only screen and (min-width: 960px) {
+  .shopItemsNoneInCart {
+    width: 960px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .shopItemsNoneInCart {
     width: 1280px;
   }
 }

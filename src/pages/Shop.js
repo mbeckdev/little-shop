@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './shop.module.css';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ import pic8 from '../assets/items/plant8.jpg';
 
 import ShopItem from '../components/ShopItem';
 import uniqid from 'uniqid';
+import SideCart from '../components/SideCart';
 
 function Shop() {
   // const itemPics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
@@ -78,6 +79,7 @@ function Shop() {
       id: uniqid(),
     },
   ];
+  const [somethingInCart, setSomethingInCart] = useState(true);
 
   const handleItemClick = (e, thisItem) => {
     e.preventDefault();
@@ -91,6 +93,13 @@ function Shop() {
     e.preventDefault();
     console.log('Add to cart clicked from shopitem');
   };
+
+  let shopItemsClassName;
+  if (somethingInCart) {
+    shopItemsClassName = styles.shopItems;
+  } else {
+    shopItemsClassName = styles.shopItemsNoneInCart;
+  }
 
   return (
     <div className={styles.shop}>
@@ -110,7 +119,7 @@ function Shop() {
       <div className={styles.itemsAndCartContainer}>
         <div className={styles.itemsAndTitle}>
           <h2 className={styles.pageTitle}>SHOP</h2>
-          <div className={styles.shopItems}>
+          <div className={shopItemsClassName}>
             {allItems.map((item) => (
               <ShopItem
                 item={item}
@@ -121,7 +130,8 @@ function Shop() {
             ))}
           </div>
         </div>
-        {true} && <div>cart hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</div>}
+
+        {somethingInCart && <SideCart />}
       </div>
       <Outlet />
     </div>
