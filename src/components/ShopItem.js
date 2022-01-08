@@ -29,7 +29,13 @@ function ShopItem(props) {
           <img src={imgPath} alt={item.altText} />
           <div className={styles.shopItemTitle}>{item.name}</div>
           <div className={styles.shopItemPrice}>${item.price}</div>
-          <button className="btn" onClick={handleAddToCart}>
+          <button
+            className="btn"
+            onClick={(e) => {
+              handleAddToCart(e, item);
+            }}
+          >
+            {/* <button className="btn" onClick={handleAddToCart}> */}
             Add to Cart
           </button>
         </div>

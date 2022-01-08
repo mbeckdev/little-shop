@@ -5,80 +5,85 @@ import { Link, NavLink, Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
 
-import pic1 from '../assets/items/plant1.jpg';
-import pic2 from '../assets/items/plant2.jpg';
-import pic3 from '../assets/items/plant3.jpg';
-import pic4 from '../assets/items/plant4.jpg';
-import pic5 from '../assets/items/plant5.jpg';
-import pic6 from '../assets/items/plant6.jpg';
-import pic7 from '../assets/items/plant7.jpg';
-import pic8 from '../assets/items/plant8.jpg';
-
 import ShopItem from '../components/ShopItem';
-import uniqid from 'uniqid';
+
 import SideCart from '../components/SideCart';
+
+import initialItems from '../initialItems';
+const allItems = [...initialItems];
+// const allItems = [
+//   {
+//     name: 'plant1',
+//     img: pic1,
+//     price: 19.99,
+//     altText: 'picture of a plant',
+//     id: uniqid(),
+//     qty: 0,
+//   },
+//   {
+//     name: 'plant2',
+//     img: pic2,
+//     price: 19.99,
+//     altText: 'picture of a plant',
+//     id: uniqid(),
+//     qty: 0,
+//   },
+//   {
+//     name: 'plant3',
+//     img: pic3,
+//     price: 19.99,
+//     altText: 'picture of a plant',
+//     id: uniqid(),
+//     qty: 0,
+//   },
+//   {
+//     name: 'plant4',
+//     img: pic4,
+//     price: 29.99,
+//     altText: 'picture of a plant',
+//     id: uniqid(),
+//     qty: 0,
+//   },
+//   {
+//     name: 'plant5',
+//     img: pic5,
+//     price: 19.99,
+//     altText: 'picture of a plant',
+//     id: uniqid(),
+//     qty: 0,
+//   },
+//   {
+//     name: 'plant6',
+//     img: pic6,
+//     price: 19.99,
+//     altText: 'picture of a plant',
+//     id: uniqid(),
+//     qty: 0,
+//   },
+//   {
+//     name: 'plant7',
+//     img: pic7,
+//     price: 19.99,
+//     altText: 'picture of a plant',
+//     id: uniqid(),
+//     qty: 0,
+//   },
+//   {
+//     name: 'plant8',
+//     img: pic8,
+//     price: 19.99,
+//     altText: 'picture of a plant',
+//     id: uniqid(),
+//     qty: 0,
+//   },
+// ];
 
 function Shop() {
   // const itemPics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
 
-  const allItems = [
-    {
-      name: 'plant1',
-      img: pic1,
-      price: 19.99,
-      altText: 'picture of a plant',
-      id: uniqid(),
-    },
-    {
-      name: 'plant2',
-      img: pic2,
-      price: 19.99,
-      altText: 'picture of a plant',
-      id: uniqid(),
-    },
-    {
-      name: 'plant3',
-      img: pic3,
-      price: 19.99,
-      altText: 'picture of a plant',
-      id: uniqid(),
-    },
-    {
-      name: 'plant4',
-      img: pic4,
-      price: 29.99,
-      altText: 'picture of a plant',
-      id: uniqid(),
-    },
-    {
-      name: 'plant5',
-      img: pic5,
-      price: 19.99,
-      altText: 'picture of a plant',
-      id: uniqid(),
-    },
-    {
-      name: 'plant6',
-      img: pic6,
-      price: 19.99,
-      altText: 'picture of a plant',
-      id: uniqid(),
-    },
-    {
-      name: 'plant7',
-      img: pic7,
-      price: 19.99,
-      altText: 'picture of a plant',
-      id: uniqid(),
-    },
-    {
-      name: 'plant8',
-      img: pic8,
-      price: 19.99,
-      altText: 'picture of a plant',
-      id: uniqid(),
-    },
-  ];
+  for (let k = 0; k < allItems.length; k++) {
+    console.log(allItems[k].id);
+  }
 
   const handleItemClick = (e, thisItem) => {
     e.preventDefault();
@@ -88,19 +93,50 @@ function Shop() {
     // </Link>;
   };
 
-  const handleAddToCart = (e) => {
+  const handleAddToCart = (e, clickedItem) => {
     e.preventDefault();
     console.log('Add to cart clicked from shopitem');
+
     let tempCart = {
       numberInCart: cart.numberInCart,
       somethingInCart: cart.somethingInCart,
+      items: [...cart.items],
     };
 
+    // update numberInCart
     tempCart.numberInCart = cart.numberInCart + 1;
-
+    // update somethingInCart
     tempCart.numberInCart > 0
       ? (tempCart.somethingInCart = true)
       : (tempCart.somethingInCart = false);
+
+    // update items
+    let tempItems = [...cart.items];
+
+    console.log('clickedItem', clickedItem);
+    console.log('tempItems', tempItems);
+
+    // make items smaller and add qties to them
+    console.log('dur', clickedItem.qty);
+    // if clicked item is already in the cart, dont add it, just increment qty
+    // is clicked item already in cart?
+
+    // for each entry of items
+    let isItemAlreadyInCart = false;
+    for (let i = 0; i < cart.items.length; i++) {
+      if (tempCart.items[i].id == clickedItem.id) {
+        console.log('exists already');
+        isItemAlreadyInCart = true;
+        tempCart.items[i].qty = tempCart.items[i].qty + 1;
+      }
+    }
+    if (!isItemAlreadyInCart) {
+      let tempClickedItem = clickedItem;
+      tempClickedItem.qty = 1;
+      tempItems = [...tempItems, tempClickedItem];
+    }
+
+    tempCart.items = tempItems;
 
     setCart(tempCart);
   };
@@ -108,9 +144,30 @@ function Shop() {
   const [cart, setCart] = useState({
     numberInCart: 0,
     somethingInCart: false,
+
+    items: [
+      {
+        name: 'plant1',
+        img: allItems[0].img,
+        price: 19.99,
+        altText: 'picture of a plant',
+        id: allItems[0].id,
+        qty: 0,
+      },
+      {
+        name: 'plant2',
+        img: allItems[1].img,
+        price: 19.99,
+        altText: 'picture of a plant',
+        id: allItems[1].id,
+        qty: 0,
+      },
+    ],
   });
 
-  useEffect(() => {}, [cart]);
+  useEffect(() => {
+    console.log('cart updated');
+  }, [cart]);
 
   let shopItemsClassName;
   if (cart.somethingInCart) {
@@ -150,7 +207,7 @@ function Shop() {
           </div>
         </div>
 
-        {cart.somethingInCart && <SideCart />}
+        {cart.somethingInCart && <SideCart cart={cart} />}
       </div>
       <Outlet />
     </div>
