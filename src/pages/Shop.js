@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './shop.module.css';
 import { Link, NavLink, Outlet } from 'react-router-dom';
 
@@ -79,7 +79,6 @@ function Shop() {
       id: uniqid(),
     },
   ];
-  const [somethingInCart, setSomethingInCart] = useState(true);
 
   const handleItemClick = (e, thisItem) => {
     e.preventDefault();
@@ -92,20 +91,39 @@ function Shop() {
   const handleAddToCart = (e) => {
     e.preventDefault();
     console.log('Add to cart clicked from shopitem');
+    let tempCart = {
+      numberInCart: cart.numberInCart,
+      somethingInCart: cart.somethingInCart,
+    };
+
+    tempCart.numberInCart = cart.numberInCart + 1;
+
+    tempCart.numberInCart > 0
+      ? (tempCart.somethingInCart = true)
+      : (tempCart.somethingInCart = false);
+
+    setCart(tempCart);
   };
 
+  const [cart, setCart] = useState({
+    numberInCart: 0,
+    somethingInCart: false,
+  });
+
+  useEffect(() => {}, [cart]);
+
   let shopItemsClassName;
-  if (somethingInCart) {
+  if (cart.somethingInCart) {
     shopItemsClassName = styles.shopItems;
   } else {
     shopItemsClassName = styles.shopItemsNoneInCart;
   }
-
+  // debugger;
   return (
     <div className={styles.shop}>
       <div className={styles.shoppingCartIconBar}>
         <div className={styles.iconContainer}>
-          <div id={styles.numberInCart}>23</div>
+          <div id={styles.numberInCart}>{cart.numberInCart}</div>
           <div className={styles.shoppingCartIcon}>
             <FontAwesomeIcon
               icon={faShoppingCart}
@@ -131,7 +149,7 @@ function Shop() {
           </div>
         </div>
 
-        {somethingInCart && <SideCart />}
+        {cart.somethingInCart && <SideCart />}
       </div>
       <Outlet />
     </div>
