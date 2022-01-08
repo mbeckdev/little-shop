@@ -118,7 +118,7 @@ function Shop() {
   } else {
     shopItemsClassName = styles.shopItemsNoneInCart;
   }
-  // debugger;
+
   return (
     <div className={styles.shop}>
       <div className={styles.shoppingCartIconBar}>
@@ -141,6 +141,7 @@ function Shop() {
             {allItems.map((item) => (
               <ShopItem
                 item={item}
+                key={item.id}
                 imgPath={item.img}
                 handleItemClick={handleItemClick}
                 handleAddToCart={handleAddToCart}
