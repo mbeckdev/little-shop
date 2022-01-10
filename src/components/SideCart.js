@@ -41,8 +41,8 @@ function SideCart({ cart }) {
           </div>
         ))}
       </div>
-      <div>Total Here</div>
-      <div>Checkout button here</div>
+      <div>Total ${cart.total}</div>
+      <button>Checkout</button>
     </div>
   );
 }

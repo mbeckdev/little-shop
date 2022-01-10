@@ -100,11 +100,13 @@ function Shop() {
     let tempCart = {
       numberInCart: cart.numberInCart,
       somethingInCart: cart.somethingInCart,
+      total: cart.total,
       items: [...cart.items],
     };
 
     // update numberInCart
     tempCart.numberInCart = cart.numberInCart + 1;
+
     // update somethingInCart
     tempCart.numberInCart > 0
       ? (tempCart.somethingInCart = true)
@@ -136,6 +138,8 @@ function Shop() {
       tempItems = [...tempItems, tempClickedItem];
     }
 
+    tempCart.total = tempCart.total + clickedItem.price;
+
     tempCart.items = tempItems;
 
     setCart(tempCart);
@@ -144,26 +148,27 @@ function Shop() {
   const [cart, setCart] = useState({
     numberInCart: 0,
     somethingInCart: false,
+    total: 0,
 
-    items: [
-      {
-        name: 'plant1',
-        img: allItems[0].img,
-        price: 19.99,
-        altText: 'picture of a plant',
-        id: allItems[0].id,
-        qty: 0,
-      },
-      {
-        name: 'plant2',
-        img: allItems[1].img,
-        price: 19.99,
-        altText: 'picture of a plant',
-        id: allItems[1].id,
-        qty: 0,
-      },
-    ],
+    items: [],
   });
+  //   {
+  //     name: 'plant1',
+  //     img: allItems[0].img,
+  //     price: 19.99,
+  //     altText: 'picture of a plant',
+  //     id: allItems[0].id,
+  //     qty: 0,
+  //   },
+  //   {
+  //     name: 'plant2',
+  //     img: allItems[1].img,
+  //     price: 19.99,
+  //     altText: 'picture of a plant',
+  //     id: allItems[1].id,
+  //     qty: 0,
+  //   },
+  // ],
 
   useEffect(() => {
     console.log('cart updated');
