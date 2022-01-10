@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './sideCart.module.css';
 
-function SideCart({ cart }) {
+function SideCart({ cart, handleAddToCart }) {
   console.log(cart);
   return (
     <div className={styles.sideCart}>
@@ -25,7 +25,13 @@ function SideCart({ cart }) {
                 <div className={styles.inputContainer}>
                   <input type="text" />
                 </div>
-                <button>+</button>
+                <button
+                  onClick={(e) => {
+                    handleAddToCart(e, itemInCart);
+                  }}
+                >
+                  +
+                </button>
               </div>
               <button>Delete</button>
             </div>

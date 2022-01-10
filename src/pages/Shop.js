@@ -212,7 +212,9 @@ function Shop() {
           </div>
         </div>
 
-        {cart.somethingInCart && <SideCart cart={cart} />}
+        {cart.somethingInCart && (
+          <SideCart cart={cart} handleAddToCart={handleAddToCart} />
+        )}
       </div>
       <Outlet />
     </div>
