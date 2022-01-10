@@ -11,87 +11,11 @@ import SideCart from '../components/SideCart';
 
 import initialItems from '../initialItems';
 const allItems = [...initialItems];
-// const allItems = [
-//   {
-//     name: 'plant1',
-//     img: pic1,
-//     price: 19.99,
-//     altText: 'picture of a plant',
-//     id: uniqid(),
-//     qty: 0,
-//   },
-//   {
-//     name: 'plant2',
-//     img: pic2,
-//     price: 19.99,
-//     altText: 'picture of a plant',
-//     id: uniqid(),
-//     qty: 0,
-//   },
-//   {
-//     name: 'plant3',
-//     img: pic3,
-//     price: 19.99,
-//     altText: 'picture of a plant',
-//     id: uniqid(),
-//     qty: 0,
-//   },
-//   {
-//     name: 'plant4',
-//     img: pic4,
-//     price: 29.99,
-//     altText: 'picture of a plant',
-//     id: uniqid(),
-//     qty: 0,
-//   },
-//   {
-//     name: 'plant5',
-//     img: pic5,
-//     price: 19.99,
-//     altText: 'picture of a plant',
-//     id: uniqid(),
-//     qty: 0,
-//   },
-//   {
-//     name: 'plant6',
-//     img: pic6,
-//     price: 19.99,
-//     altText: 'picture of a plant',
-//     id: uniqid(),
-//     qty: 0,
-//   },
-//   {
-//     name: 'plant7',
-//     img: pic7,
-//     price: 19.99,
-//     altText: 'picture of a plant',
-//     id: uniqid(),
-//     qty: 0,
-//   },
-//   {
-//     name: 'plant8',
-//     img: pic8,
-//     price: 19.99,
-//     altText: 'picture of a plant',
-//     id: uniqid(),
-//     qty: 0,
-//   },
-// ];
 
 function Shop() {
-  // const itemPics = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
-
   for (let k = 0; k < allItems.length; k++) {
     console.log(allItems[k].id);
   }
-
-  const handleItemClick = (e, thisItem) => {
-    e.preventDefault();
-    console.log('handle item click', thisItem);
-    // <Link to="/home">
-    //   <li>Shop</li>
-    // </Link>;
-  };
 
   const handleAddToCart = (e, clickedItem) => {
     e.preventDefault();
@@ -189,7 +113,6 @@ function Shop() {
                 item={item}
                 key={item.id}
                 imgPath={item.img}
-                handleItemClick={handleItemClick}
                 handleAddToCart={handleAddToCart}
               />
             ))}
@@ -206,19 +129,3 @@ function Shop() {
 }
 
 export default Shop;
-
-{
-  /* <ShopItem
-              item={item}
-              key={item.id}
-              imgPath={item.img}
-              handleItemClick={handleItemClick}
-            /> */
-}
-
-{
-  /* <Link to="/home" key={item.id}> */
-}
-{
-  /* </Link> */
-}
