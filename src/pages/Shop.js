@@ -138,7 +138,8 @@ function Shop() {
       tempItems = [...tempItems, tempClickedItem];
     }
 
-    tempCart.total = tempCart.total + clickedItem.price;
+    let tempTotal = tempCart.total + clickedItem.price;
+    tempCart.total = Number(tempTotal.toFixed(2));
 
     tempCart.items = tempItems;
 
@@ -152,23 +153,6 @@ function Shop() {
 
     items: [],
   });
-  //   {
-  //     name: 'plant1',
-  //     img: allItems[0].img,
-  //     price: 19.99,
-  //     altText: 'picture of a plant',
-  //     id: allItems[0].id,
-  //     qty: 0,
-  //   },
-  //   {
-  //     name: 'plant2',
-  //     img: allItems[1].img,
-  //     price: 19.99,
-  //     altText: 'picture of a plant',
-  //     id: allItems[1].id,
-  //     qty: 0,
-  //   },
-  // ],
 
   useEffect(() => {
     console.log('cart updated');
