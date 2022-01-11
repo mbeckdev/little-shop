@@ -21,12 +21,7 @@ function Shop() {
     e.preventDefault();
     console.log('Add to cart clicked from shopitem');
 
-    let tempCart = {
-      numberInCart: cart.numberInCart,
-      somethingInCart: cart.somethingInCart,
-      total: cart.total,
-      items: [...cart.items],
-    };
+    let tempCart = getCartBeforeChange();
 
     // update numberInCart
     tempCart.numberInCart = cart.numberInCart + 1;
@@ -50,7 +45,7 @@ function Shop() {
     // for each entry of items
     let isItemAlreadyInCart = false;
     for (let i = 0; i < cart.items.length; i++) {
-      if (tempCart.items[i].id == clickedItem.id) {
+      if (tempCart.items[i].id === clickedItem.id) {
         console.log('exists already');
         isItemAlreadyInCart = true;
         tempCart.items[i].qty = tempCart.items[i].qty + 1;
@@ -69,6 +64,40 @@ function Shop() {
 
     setCart(tempCart);
   };
+
+  const handleSubtractFromCart = (e, clickedItem) => {
+    let tempCart = getCartBeforeChange();
+
+    // find which item you clicked, change qty 1 lower or delete item.
+
+    if (clickedItem.qty <= 1) {
+      // delete item... tbd
+    } else {
+      // decrement qty
+
+      // find this item in tempCart
+      for (let i = 0; i < cart.items.length; i++) {
+        if (tempCart.items[i].id === clickedItem.id) {
+          tempCart.items[i].qty = tempCart.items[i].qty - 1;
+
+          let tempTotal = tempCart.total - clickedItem.price;
+          tempCart.total = Number(tempTotal.toFixed(2));
+        }
+      }
+    }
+
+    setCart(tempCart);
+  };
+
+  function getCartBeforeChange() {
+    let tempCart = {
+      numberInCart: cart.numberInCart,
+      somethingInCart: cart.somethingInCart,
+      total: cart.total,
+      items: [...cart.items],
+    };
+    return tempCart;
+  }
 
   const [cart, setCart] = useState({
     numberInCart: 0,
@@ -120,7 +149,11 @@ function Shop() {
         </div>
 
         {cart.somethingInCart && (
-          <SideCart cart={cart} handleAddToCart={handleAddToCart} />
+          <SideCart
+            cart={cart}
+            handleAddToCart={handleAddToCart}
+            handleSubtractFromCart={handleSubtractFromCart}
+          />
         )}
       </div>
       <Outlet />
