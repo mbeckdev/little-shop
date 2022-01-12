@@ -65,6 +65,32 @@ function Shop() {
     setCart(tempCart);
   };
 
+  const handleDeleteFromCart = (e, clickedItem) => {
+    let tempCart = getCartBeforeChange();
+
+    // take out item from items array
+    let tempCartWithoutItems = deleteFromCart(clickedItem);
+
+    // total price
+    let tempTotal = tempCart.total - clickedItem.price * clickedItem.qty;
+    tempCart.total = Number(tempTotal.toFixed(2));
+
+    // number in cart
+    if (tempCart.numberInCart > 0) {
+      tempCart.numberInCart = tempCart.numberInCart - clickedItem.qty;
+    }
+
+    if (tempCart.numberInCart <= 0) {
+      tempCart.somethingInCart = false;
+    }
+
+    console.log(tempCart);
+
+    tempCart.items = tempCartWithoutItems.items;
+    console.log(tempCart);
+    setCart(tempCart);
+  };
+
   function deleteFromCart(itemToDelete) {
     let tempCart = getCartBeforeChange();
 
@@ -176,6 +202,7 @@ function Shop() {
             cart={cart}
             handleAddToCart={handleAddToCart}
             handleSubtractFromCart={handleSubtractFromCart}
+            handleDeleteFromCart={handleDeleteFromCart}
           />
         )}
       </div>

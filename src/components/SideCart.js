@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './sideCart.module.css';
 
-function SideCart({ cart, handleAddToCart, handleSubtractFromCart }) {
+function SideCart({
+  cart,
+  handleAddToCart,
+  handleSubtractFromCart,
+  handleDeleteFromCart,
+}) {
   console.log(cart);
   return (
     <div className={styles.sideCart}>
@@ -39,7 +44,13 @@ function SideCart({ cart, handleAddToCart, handleSubtractFromCart }) {
                   +
                 </button>
               </div>
-              <button>Delete</button>
+              <button
+                onClick={(e) => {
+                  handleDeleteFromCart(e, itemInCart);
+                }}
+              >
+                Delete
+              </button>
             </div>
           </div>
         ))}
