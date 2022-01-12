@@ -21,7 +21,7 @@ function Shop({ cart, setCart }) {
     e.preventDefault();
     console.log('Add to cart clicked from shopitem');
 
-    let tempCart = getCartBeforeChange();
+    let tempCart = _getCartBeforeChange();
 
     // update numberInCart
     tempCart.numberInCart = cart.numberInCart + 1;
@@ -66,7 +66,7 @@ function Shop({ cart, setCart }) {
   };
 
   const handleDeleteFromCart = (e, clickedItem) => {
-    let tempCart = getCartBeforeChange();
+    let tempCart = _getCartBeforeChange();
 
     // take out item from items array
     let tempCartWithoutItems = deleteFromCart(clickedItem);
@@ -92,7 +92,7 @@ function Shop({ cart, setCart }) {
   };
 
   function deleteFromCart(itemToDelete) {
-    let tempCart = getCartBeforeChange();
+    let tempCart = _getCartBeforeChange();
 
     for (let i = 0; i < cart.items.length; i++) {
       if (tempCart.items[i].id === itemToDelete.id) {
@@ -104,7 +104,7 @@ function Shop({ cart, setCart }) {
   }
 
   const handleSubtractFromCart = (e, clickedItem) => {
-    let tempCart = getCartBeforeChange();
+    let tempCart = _getCartBeforeChange();
 
     // find which item you clicked, change qty 1 lower or delete item.
 
@@ -138,7 +138,7 @@ function Shop({ cart, setCart }) {
     setCart(tempCart);
   };
 
-  function getCartBeforeChange() {
+  function _getCartBeforeChange() {
     let tempCart = {
       numberInCart: cart.numberInCart,
       somethingInCart: cart.somethingInCart,
@@ -148,17 +148,55 @@ function Shop({ cart, setCart }) {
     return tempCart;
   }
 
-  // const [cart, setCart] = useState({
-  //   numberInCart: 0,
-  //   somethingInCart: false,
-  //   total: 0,
+  const handleQtyChange = (e, itemToChange) => {
+    let tempCart = _getCartBeforeChange();
+    let itemIndex = _getThisItemIndex(tempCart, itemToChange);
 
-  //   items: [],
-  // });
+    //it's a positive number and is not .
+    if (Number(e.target.value) && e.target.value !== '.') {
+      tempCart.items[itemIndex].qty = Number(e.target.value);
+      tempCart.numberInCart = _findNumberInCartFromItems(tempCart.items);
+      tempCart.somethingInCart = _findSomethingInCartFromItems(tempCart.items);
+      tempCart.total = _findTotalInCartFromItems(tempCart.items);
+      setCart(tempCart);
+    } else if (e.target.value === '0' || e.target.value === '') {
+      handleDeleteFromCart(e, itemToChange);
+    }
+  };
 
-  // useEffect(() => {
-  //   console.log('cart updated');
-  // }, [cart]);
+  function _findNumberInCartFromItems(cartItems) {
+    let numberInCart = 0;
+    for (let i = 0; i < cartItems.length; i++) {
+      //check qty, add to number
+      numberInCart += cartItems[i].qty;
+    }
+    return numberInCart;
+  }
+
+  function _findSomethingInCartFromItems(cartItems) {
+    if (cartItems.length <= 0) {
+      return false;
+    }
+    return true;
+  }
+
+  function _findTotalInCartFromItems(cartItems) {
+    let total = 0;
+    for (let i = 0; i < cartItems.length; i++) {
+      //check qty, add to number
+      total += cartItems[i].price * cartItems[i].qty;
+    }
+    return total;
+  }
+
+  function _getThisItemIndex(theCart, theItem) {
+    for (let index = 0; index < theCart.items.length; index++) {
+      if (theCart.items[index].id === theItem.id) {
+        return index;
+      }
+    }
+    return -1;
+  }
 
   let shopItemsClassName;
   if (cart.somethingInCart) {
@@ -203,6 +241,7 @@ function Shop({ cart, setCart }) {
             handleAddToCart={handleAddToCart}
             handleSubtractFromCart={handleSubtractFromCart}
             handleDeleteFromCart={handleDeleteFromCart}
+            handleQtyChange={handleQtyChange}
           />
         )}
       </div>

@@ -6,6 +6,7 @@ function SideCart({
   handleAddToCart,
   handleSubtractFromCart,
   handleDeleteFromCart,
+  handleQtyChange,
 }) {
   console.log(cart);
   return (
@@ -34,7 +35,13 @@ function SideCart({
                   -
                 </button>
                 <div className={styles.inputContainer}>
-                  <input type="text" value={itemInCart.qty} />
+                  <input
+                    type="text"
+                    value={itemInCart.qty}
+                    onChange={(e) => {
+                      handleQtyChange(e, itemInCart);
+                    }}
+                  />
                 </div>
                 <button
                   onClick={(e) => {
