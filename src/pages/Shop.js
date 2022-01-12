@@ -65,6 +65,18 @@ function Shop() {
     setCart(tempCart);
   };
 
+  function deleteFromCart(itemToDelete) {
+    let tempCart = getCartBeforeChange();
+
+    for (let i = 0; i < cart.items.length; i++) {
+      if (tempCart.items[i].id === itemToDelete.id) {
+        tempCart.items.splice(i, 1);
+
+        return tempCart;
+      }
+    }
+  }
+
   const handleSubtractFromCart = (e, clickedItem) => {
     let tempCart = getCartBeforeChange();
 
@@ -72,6 +84,7 @@ function Shop() {
 
     if (clickedItem.qty <= 1) {
       // delete item... tbd
+      tempCart = deleteFromCart(clickedItem);
     } else {
       // decrement qty
 
@@ -79,11 +92,21 @@ function Shop() {
       for (let i = 0; i < cart.items.length; i++) {
         if (tempCart.items[i].id === clickedItem.id) {
           tempCart.items[i].qty = tempCart.items[i].qty - 1;
-
-          let tempTotal = tempCart.total - clickedItem.price;
-          tempCart.total = Number(tempTotal.toFixed(2));
         }
       }
+    }
+
+    // total price
+    let tempTotal = tempCart.total - clickedItem.price;
+    tempCart.total = Number(tempTotal.toFixed(2));
+
+    // number in cart
+    if (tempCart.numberInCart > 0) {
+      tempCart.numberInCart = tempCart.numberInCart - 1;
+    }
+
+    if (tempCart.numberInCart <= 0) {
+      tempCart.somethingInCart = false;
     }
 
     setCart(tempCart);
