@@ -55,7 +55,7 @@ function SideCart({
           </div>
         ))}
       </div>
-      <div>Total ${cart.total}</div>
+      <div>Total ${cart.total.toFixed(2)}</div>
       <button>Checkout</button>
     </div>
   );
