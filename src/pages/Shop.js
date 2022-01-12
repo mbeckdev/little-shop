@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './shop.module.css';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/fontawesome-free-solid';
@@ -12,7 +12,7 @@ import SideCart from '../components/SideCart';
 import initialItems from '../initialItems';
 const allItems = [...initialItems];
 
-function Shop() {
+function Shop({ cart, setCart }) {
   for (let k = 0; k < allItems.length; k++) {
     console.log(allItems[k].id);
   }
@@ -148,17 +148,17 @@ function Shop() {
     return tempCart;
   }
 
-  const [cart, setCart] = useState({
-    numberInCart: 0,
-    somethingInCart: false,
-    total: 0,
+  // const [cart, setCart] = useState({
+  //   numberInCart: 0,
+  //   somethingInCart: false,
+  //   total: 0,
 
-    items: [],
-  });
+  //   items: [],
+  // });
 
-  useEffect(() => {
-    console.log('cart updated');
-  }, [cart]);
+  // useEffect(() => {
+  //   console.log('cart updated');
+  // }, [cart]);
 
   let shopItemsClassName;
   if (cart.somethingInCart) {
