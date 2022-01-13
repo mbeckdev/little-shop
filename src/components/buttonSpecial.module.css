@@ -1,0 +1,11 @@
+@value colors: "../colors.css";
+@value primary, secondary, green1, green2, green3, pinkish from colors;
+
+.btn {
+  background-color: green2;
+  color: secondary;
+  border: 1px solid primary;
+
+  border-radius: 5px;
+  padding: 4px 11px;
+}
