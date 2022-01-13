@@ -3,7 +3,7 @@
 
 .btn {
   background-color: transparent;
-  border: 1px solid primary;
+  border: 1px solid green3;
 
   border-radius: 5px;
   padding: 0px 7px;
@@ -11,6 +11,11 @@
 
 .btn:hover {
   background-color: green3;
+  color: secondary;
+}
+
+.btn:active {
+  background-color: green1;
   color: secondary;
 }
 
@@ -29,6 +34,11 @@
   color: secondary;
 }
 
+.btnPlusOrMinus:active {
+  background-color: green1;
+  color: secondary;
+}
+
 .btnSpecial {
   background-color: green2;
   color: secondary;
@@ -40,5 +50,10 @@
 
 .btnSpecial:hover {
   background-color: green1;
+  color: secondary;
+}
+
+.btnSpecial:active {
+  background-color: primary;
   color: secondary;
 }

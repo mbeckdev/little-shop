@@ -32,8 +32,6 @@ a {
 
 a:hover {
   color: green2;
-
-  text-shadow: 1px 1px 3px pinkish;
 }
 
 li {
@@ -47,4 +45,11 @@ li {
 
 li:hover {
   border-color: green2;
+}
+
+a:active {
+  color: green1;
+}
+li:active {
+  border-color: green1;
 }
