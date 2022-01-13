@@ -32,7 +32,7 @@
   flex-direction: row;
   justify-content: space-between;
   /* align-items: flex-start; */
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
   width: 100%;
 }
 
@@ -43,7 +43,7 @@
 
   /* border: 1px solid red; */
   position: relative;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 100%;
 }
 
@@ -60,7 +60,7 @@
   color: primary;
 
   margin-top: 45px;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 @media only screen and (min-width: 480px) {
@@ -164,7 +164,7 @@
   height: 2rem;
 
   border-radius: 50%;
-  background-color: pinkish;
+  background-color: green2;
   color: primary;
 
   display: flex;

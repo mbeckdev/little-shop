@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './shopItem.module.css';
 import { NavLink } from 'react-router-dom';
+import Button from './Button';
 
 function ShopItem(props) {
   const { item, imgPath, handleAddToCart } = props;
@@ -19,14 +20,14 @@ function ShopItem(props) {
           <img src={imgPath} alt={item.altText} />
           <div className={styles.shopItemTitle}>{item.name}</div>
           <div className={styles.shopItemPrice}>${item.price}</div>
-          <button
-            className="btn"
-            onClick={(e) => {
+
+          <Button
+            buttonType="special"
+            text="Add to Cart"
+            onTheClick={(e) => {
               handleAddToCart(e, item);
             }}
-          >
-            Add to Cart
-          </button>
+          />
         </div>
       </div>
     </NavLink>
