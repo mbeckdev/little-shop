@@ -67,7 +67,10 @@ function SideCart({
         ))}
       </div>
 
-      <div>Subtotal ${cart.total.toFixed(2)}</div>
+      <div className={styles.subTotalContainer}>
+        <div className={styles.subTotal}>Subtotal</div>
+        <div className={styles.subTotalPrice}>${cart.total.toFixed(2)}</div>
+      </div>
 
       <Button text="Checkout" buttonType="special" />
     </div>

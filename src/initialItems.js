@@ -11,7 +11,7 @@ import pic8 from './assets/items/plant8.jpg';
 
 const initialItems = [
   {
-    name: 'plant1',
+    name: 'Tall Leafy',
     img: pic1,
     price: 19.99,
     altText: 'picture of a plant',
@@ -19,15 +19,15 @@ const initialItems = [
     qty: 0,
   },
   {
-    name: 'plant2',
+    name: 'Leaf Monster',
     img: pic2,
-    price: 19.99,
+    price: 9.99,
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
   },
   {
-    name: 'plant3',
+    name: 'Serrated Cobra',
     img: pic3,
     price: 19.99,
     altText: 'picture of a plant',
@@ -35,7 +35,7 @@ const initialItems = [
     qty: 0,
   },
   {
-    name: 'plant4',
+    name: 'Round Leaf',
     img: pic4,
     price: 29.99,
     altText: 'picture of a plant',
@@ -43,7 +43,7 @@ const initialItems = [
     qty: 0,
   },
   {
-    name: 'plant5',
+    name: 'Droopy',
     img: pic5,
     price: 19.99,
     altText: 'picture of a plant',
@@ -51,7 +51,7 @@ const initialItems = [
     qty: 0,
   },
   {
-    name: 'plant6',
+    name: 'Hanging Green',
     img: pic6,
     price: 19.99,
     altText: 'picture of a plant',
@@ -59,7 +59,7 @@ const initialItems = [
     qty: 0,
   },
   {
-    name: 'plant7',
+    name: 'Office Plant',
     img: pic7,
     price: 19.99,
     altText: 'picture of a plant',
@@ -67,7 +67,7 @@ const initialItems = [
     qty: 0,
   },
   {
-    name: 'plant8',
+    name: 'Flower Power',
     img: pic8,
     price: 19.99,
     altText: 'picture of a plant',

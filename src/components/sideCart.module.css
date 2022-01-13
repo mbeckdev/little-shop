@@ -1,6 +1,10 @@
 @value colors: "../colors.css";
 @value primary, secondary, green1, green2, green3, pinkish from colors;
 
+/* *************************** */
+/* Overall sideCart styles */
+/* *************************** */
+
 .sideCart {
   min-width: 200px;
   /* border-left: 1px solid primary; */
@@ -8,6 +12,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* border: 1px solid orange; */
+  margin-top: 0.5rem;
 }
 
 @media only screen and (min-width: 320px) {
@@ -22,8 +28,25 @@
   }
 }
 
+/* *************************** */
+/* Other sideCart styles */
+/* *************************** */
+
+.sideCart h2 {
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  /* font-family: 'Fredericka the Great', cursive; */
+  font-weight: 700;
+
+  /* position: absolute; */
+  /* top: 0; */
+  /* border: 1px solid red; */
+  margin-bottom: 1rem;
+}
+
 .sideCartItemContainer {
   width: 100%;
+  /* border: 1px solid blue; */
 }
 
 .sideCartItem img {
@@ -36,24 +59,33 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
+  /* border: 1px solid yellow; */
 }
 
 .sideCartSectionA {
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  padding-left: 15px;
+  /* border: 1px solid blue; */
 }
 
 .sideCartSectionA_A {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  /* border: 1px solid green; */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .sideCartSectionB {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px 10px;
+  padding: 10px 0 10px 0;
+
+  /* border: 1px solid red; */
 }
 
 .sideCartSectionB_qtyContainer {
@@ -78,4 +110,22 @@
   padding: 0px 7px;
   /* height: 1rem; */
   height: 100%;
+}
+
+.sideCart .subTotalContainer {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sideCart .subTotal {
+  margin-left: 0.5rem;
+}
+
+.sideCart .shopItemPrice,
+.subTotalPrice {
+  /* color: blue; */
+  padding-right: 5px;
 }
