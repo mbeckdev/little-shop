@@ -5,7 +5,9 @@ import styles from './navbar.module.css';
 const Navbar = () => {
   return (
     <nav>
-      <h1 className={styles.headerLogo}>Mini Jungle</h1>
+      <h1 className={styles.headerLogo}>
+        <Link to="/home">Mini Jungle</Link>
+      </h1>
       <ul className={styles.navLinks}>
         <Link to="/home">
           <li>Home</li>
