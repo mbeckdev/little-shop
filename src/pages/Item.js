@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import styles from './item.module.css';
 
 function Item(props) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { itemId } = useParams();
   const location = useLocation();
   const { item, imgPath } = location.state;

@@ -1,14 +1,9 @@
 import React from 'react';
 import styles from './shopItem.module.css';
-import { Link, useParams, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function ShopItem(props) {
   const { item, imgPath, handleAddToCart } = props;
-
-  // console.log('shopitem', item);
-  // console.log(imgPath);
-
-  const { itemId } = useParams();
 
   return (
     <NavLink
@@ -19,12 +14,7 @@ function ShopItem(props) {
         imgPath: imgPath,
       }}
     >
-      <div
-        className={(styles.shopItem, 'shopItem')}
-        // onClick={(e) => {
-        //   handleItemClick(e, item);
-        // }}
-      >
+      <div className={(styles.shopItem, 'shopItem')}>
         <div className={styles.shopItemContainer}>
           <img src={imgPath} alt={item.altText} />
           <div className={styles.shopItemTitle}>{item.name}</div>
@@ -35,7 +25,6 @@ function ShopItem(props) {
               handleAddToCart(e, item);
             }}
           >
-            {/* <button className="btn" onClick={handleAddToCart}> */}
             Add to Cart
           </button>
         </div>
@@ -45,13 +34,3 @@ function ShopItem(props) {
 }
 
 export default ShopItem;
-
-{
-  /* <Link to="/item">
-          <div className={styles.shopItemContainer}>
-            <img src={imgPath} alt={item.altText} />
-            <div className={styles.shopItemTitle}>{item.name}</div>
-            <div className={styles.shopItemPrice}>${item.price}</div>
-          </div>
-        </Link> */
-}
