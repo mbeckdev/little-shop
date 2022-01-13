@@ -18,7 +18,6 @@ function SideCart({
       <div className={styles.sideCartItemContainer}>
         {cart.items.map((itemInCart) => (
           <div key={itemInCart.id} className={styles.sideCartItem}>
-            qty {itemInCart.qty} id: {itemInCart.id}
             <div className={styles.sideCartSectionA}>
               <img src={itemInCart.img} alt={itemInCart.altText} />
               {/* <img src={imgPath} alt={item.altText} /> */}
@@ -67,7 +66,7 @@ function SideCart({
           </div>
         ))}
       </div>
-      <div>Total ${cart.total.toFixed(2)}</div>
+      <div>Subtotal ${cart.total.toFixed(2)}</div>
 
       <Button text="Checkout" buttonType="special" />
     </div>
