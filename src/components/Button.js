@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './button.module.css';
+import { Link } from 'react-router-dom';
 
-function Button({ buttonType, text, onTheClick }) {
+function Button({ buttonType, text, onTheClick, isLink = false }) {
   let determinedStyle = styles.btn;
 
   if (buttonType === 'primary') {
@@ -12,11 +13,25 @@ function Button({ buttonType, text, onTheClick }) {
     determinedStyle = styles.btnPlusOrMinus;
   }
 
-  return (
+  let returnAButton = (
     <button className={determinedStyle} onClick={onTheClick}>
       {text}
     </button>
   );
+
+  let returnALink = (
+    <Link to="/shop">
+      <button className={determinedStyle} onClick={onTheClick}>
+        {text}
+      </button>
+    </Link>
+  );
+
+  let thingToReturn;
+
+  !isLink ? (thingToReturn = returnAButton) : (thingToReturn = returnALink);
+
+  return thingToReturn;
 }
 
 export default Button;
