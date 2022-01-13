@@ -60,9 +60,22 @@
   display: flex;
   width: 100px;
   justify-content: space-between;
+
+  height: 2rem;
 }
 
 .sideCartSectionB input {
   width: 50px;
   display: block;
+}
+
+.sideCart input {
+  background-color: transparent;
+  text-align: center;
+  /* border-radius: 5px; */
+  border: 1px solid green3;
+  /* border: none; */
+  padding: 0px 7px;
+  /* height: 1rem; */
+  height: 100%;
 }

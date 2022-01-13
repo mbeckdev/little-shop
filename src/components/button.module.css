@@ -1,0 +1,44 @@
+@value colors: "../colors.css";
+@value primary, secondary, green1, green2, green3, pinkish from colors;
+
+.btn {
+  background-color: transparent;
+  border: 1px solid primary;
+
+  border-radius: 5px;
+  padding: 0px 7px;
+}
+
+.btn:hover {
+  background-color: green3;
+  color: secondary;
+}
+
+.btnPlusOrMinus {
+  background-color: secondary;
+
+  border: none;
+  width: 24px;
+
+  border-radius: 5px;
+  padding: 0px 7px;
+}
+
+.btnPlusOrMinus:hover {
+  background-color: green3;
+  color: secondary;
+}
+
+.btnSpecial {
+  background-color: green2;
+  color: secondary;
+  border: 1px solid primary;
+
+  border-radius: 5px;
+  padding: 4px 11px;
+}
+
+.btnSpecial:hover {
+  background-color: green1;
+  color: secondary;
+}

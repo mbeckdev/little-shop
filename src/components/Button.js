@@ -1,14 +1,15 @@
 import React from 'react';
-import styles from './buttonPrimary.module.css';
-import stylesCart from './buttonSpecial.module.css';
+import styles from './button.module.css';
 
 function Button({ buttonType, text, onTheClick }) {
   let determinedStyle = styles.btn;
 
-  if (buttonType === 'regular') {
+  if (buttonType === 'primary') {
     determinedStyle = styles.btn;
   } else if (buttonType === 'special') {
-    determinedStyle = stylesCart.btn;
+    determinedStyle = styles.btnSpecial;
+  } else if (buttonType === 'primaryPlusOrMinus') {
+    determinedStyle = styles.btnPlusOrMinus;
   }
 
   return (

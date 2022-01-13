@@ -30,7 +30,7 @@ function SideCart({
               <div className={styles.sideCartSectionB_qtyContainer}>
                 <Button
                   text="-"
-                  buttonType="regular"
+                  buttonType="primaryPlusOrMinus"
                   onTheClick={(e) => {
                     handleSubtractFromCart(e, itemInCart);
                   }}
@@ -48,7 +48,7 @@ function SideCart({
 
                 <Button
                   text="+"
-                  buttonType="regular"
+                  buttonType="primaryPlusOrMinus"
                   onTheClick={(e) => {
                     handleAddToCart(e, itemInCart);
                   }}
@@ -57,7 +57,7 @@ function SideCart({
 
               <Button
                 text="Delete"
-                buttonType="regular"
+                buttonType="primary"
                 onTheClick={(e) => {
                   handleDeleteFromCart(e, itemInCart);
                 }}
