@@ -24,8 +24,13 @@
   background-color: primary;
 }
 
-.shopItemTitle {
-  font-size: x-large;
+.shopItemContainer {
+  font-size: small;
+}
+
+.shopItemContainer button {
+  font-size: xx-small;
+  padding: 3px 5px;
 }
 
 @media only screen and (min-width: 320px) {
@@ -34,12 +39,23 @@
     margin: 0 0 15px 0;
   }
 }
+
 @media only screen and (min-width: 480px) {
   .shopItemContainer {
     min-width: 200px;
     margin: 0 0 15px 0;
   }
+
+  .shopItemContainer {
+    font-size: x-large;
+  }
+
+  .shopItemContainer button {
+    font-size: medium;
+    padding: 4px 11px;
+  }
 }
+
 @media only screen and (min-width: 640px) {
   .shopItemContainer {
     min-width: 300px;
