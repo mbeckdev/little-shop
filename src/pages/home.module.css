@@ -6,10 +6,7 @@
 @value colors: "../colors.css";
 @value primary, secondary, green1, green2, green3, pinkish from colors;
 
-/* import thePic from "../assets/background-plants.jpg"; */
-
-#home {
-  /* src: url('/assets/background-plants.jpg'); */
+.home {
   background-image: url('../assets/background-plants.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -25,14 +22,12 @@
 }
 
 h1 {
-  /* font-size: xx-large; */
   font-size: 60px;
   font-family: 'Playfair Display', serif;
-  /* font-family: 'Fredericka the Great', cursive; */
   font-weight: 700;
 }
 
-#titleContainer {
+.titleContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,23 +38,41 @@ h1 {
 
   background: radial-gradient(green3, green3, rgba(8, 75, 17, 0) 70%);
 
-  padding: 2rem 8rem;
+  padding: 2rem 2rem;
 }
 
 .mainTitle {
-  /* font-family: 'Fredericka the Great', cursive; */
-  /* font-family: 'Noto Sans', sans-serif; */
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 64px;
-  /* font-family: 'Roboto', sans-serif; */
+  font-size: 48px;
 }
 
 p {
   letter-spacing: -0.01rem;
   font-weight: 700;
+  font-size: small;
 }
 
-#titleContainer button {
+.titleContainer button {
   margin-top: 1rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .titleContainer {
+    padding: 2rem 7rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .titleContainer {
+    padding: 2rem 8rem;
+  }
+
+  .mainTitle {
+    font-size: 64px;
+  }
+
+  p {
+    font-size: medium;
+  }
 }

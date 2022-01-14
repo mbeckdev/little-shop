@@ -5,8 +5,8 @@ import styles from './home.module.css';
 
 const Home = () => {
   return (
-    <div id={styles.home}>
-      <div id={styles.titleContainer}>
+    <div className={styles.home}>
+      <div className={styles.titleContainer}>
         <h2 className={styles.mainTitle}>Mini Jungle</h2>
         <p>Make it look like a jungle wherever you are</p>
 
