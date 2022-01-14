@@ -17,6 +17,8 @@ const initialItems = [
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ea reprehenderit dicta provident amet omnis delectus alias quod a iure repellat dolores consequuntur quae quasi tenetur, magnam voluptatibus blanditiis! Ad.',
   },
   {
     name: 'Leaf Monster',
@@ -25,6 +27,8 @@ const initialItems = [
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ea reprehenderit dicta provident amet omnis delectus alias quod a iure repellat dolores consequuntur quae quasi tenetur, magnam voluptatibus blanditiis! Ad.',
   },
   {
     name: 'Serrated Cobra',
@@ -33,6 +37,8 @@ const initialItems = [
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ea reprehenderit dicta provident amet omnis delectus alias quod a iure repellat dolores consequuntur quae quasi tenetur, magnam voluptatibus blanditiis! Ad.',
   },
   {
     name: 'Round Leaf',
@@ -41,6 +47,8 @@ const initialItems = [
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ea reprehenderit dicta provident amet omnis delectus alias quod a iure repellat dolores consequuntur quae quasi tenetur, magnam voluptatibus blanditiis! Ad.',
   },
   {
     name: 'Droopy',
@@ -49,6 +57,8 @@ const initialItems = [
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ea reprehenderit dicta provident amet omnis delectus alias quod a iure repellat dolores consequuntur quae quasi tenetur, magnam voluptatibus blanditiis! Ad.',
   },
   {
     name: 'Hanging Green',
@@ -57,6 +67,8 @@ const initialItems = [
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ea reprehenderit dicta provident amet omnis delectus alias quod a iure repellat dolores consequuntur quae quasi tenetur, magnam voluptatibus blanditiis! Ad.',
   },
   {
     name: 'Office Plant',
@@ -65,6 +77,8 @@ const initialItems = [
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ea reprehenderit dicta provident amet omnis delectus alias quod a iure repellat dolores consequuntur quae quasi tenetur, magnam voluptatibus blanditiis! Ad.',
   },
   {
     name: 'Flower Power',
@@ -73,6 +87,8 @@ const initialItems = [
     altText: 'picture of a plant',
     id: uniqid(),
     qty: 0,
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ea reprehenderit dicta provident amet omnis delectus alias quod a iure repellat dolores consequuntur quae quasi tenetur, magnam voluptatibus blanditiis! Ad.',
   },
 ];
 

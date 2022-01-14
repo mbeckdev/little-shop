@@ -3,6 +3,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import styles from './item.module.css';
 
 import SideCart from '../components/SideCart';
+import Button from '../components/Button';
 
 function Item({
   cart,
@@ -18,14 +19,22 @@ function Item({
 
   return (
     <div className={styles.itemPage}>
-      <img src={imgPath} alt={item.altText} />
+      <div className={styles.imgContainer}>
+        <img src={imgPath} alt={item.altText} />
+      </div>
       <div className={styles.infoContainer}>
-        <h2>{itemId}</h2>
-
-        <h2 className={styles.itemTitle}>{item.name}</h2>
+        <h2 className={itemId}>{item.name}</h2>
         <div className={styles.itemPrice}>${item.price}</div>
-        <div>button to add to cart here</div>
-        <div>long description here</div>
+        <div>
+          <Button
+            buttonType="special"
+            text="Add to Cart"
+            onTheClick={(e) => {
+              handleAddToCart(e, item);
+            }}
+          />
+        </div>
+        <div className={styles.description}>{item.description}</div>
       </div>
       {cart.somethingInCart && (
         <SideCart
