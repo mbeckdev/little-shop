@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# little-shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Check it out here!](https://mbeckdev.github.io/little-shop/)
 
-## Available Scripts
+A little front end of a shop using React Hooks, react-router-dom, and CSS Modules
 
-In the project directory, you can run:
+There is a list of items, and when you add them to the cart, the cart updates with that item and has addintion and subtraction buttons, and a place to type in the amount you want. When you add things to the cart the subtotal updates.
 
-### `yarn start`
+There is a Home page and a Shop page, and pages for each of the items. The cart shows up when there is something in the cart.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Why
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is made mainly to practice the shopping cart and react-router-dom. Adding and subtracting items,
+deleting times, choosing which component to keep the state in.
 
-### `yarn test`
+### Some Fun Dependencies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* uniqid -- it creates a unique identifier 
+ * (You should always use a unique key when mapping items in JSX)
+* react-router-dom 
+ * helps you make it look like there are actual pages in a website when really it's just
+a single page app (SPA). You can route components to different url paths.
+* fortawesome -- free icons from fontawesome
+ * the shopping cart icon is from there
+ 
+### An exercise from The Odin Project
+I made this as an exercise for the Odin Project.
 
-### `yarn build`
+They're directions are like: make a shopping cart, it should have this functionality in it. Also use react-router-dom. Go!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Shopping Cart Project Guidelines](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/shopping-cart)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I added extra functionality by making a page for each item. 
+Kind of like this:
+```
+ <Route
+    path="/shop/:itemId"
+    element={
+      <Item />
+    }
+  />
+```
+## What I learned
+how to use that tricky /:variable part of react-router-dom so that you don't have to create 8 different individual pages or components, just one page that takes the variable.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can pass variables in the react-router-dom `<Link />` component!
+## Programming Tidbits
 
-### `yarn eject`
+Ok, I wonder if there's a better way for this, but my navbar is 5vh (5% of the vertical height of the screen) and the Home.js is 95vh, which together make up 100% of the vertical screen, which looks fine I suppose.    Another method I've done in other projects is to make the Home.js screen 100vh and then make the navbar some height, but lay it on top of the Home.js screen using "postion: absolute"  but then part of the picture of the Home.js is eclipsed/it can't be seen.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+CSS Modules makes it difficult to use id's. Using classes instead is fine. A few people told me that's what they do when they use CSS Modules.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I made a component just for a buttons. I wanted to use styling of a button for the 'Shop Now' button on the home screen but it's actually a link, so I made some logic in the Button.js component so it works.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```function Button({ buttonType, text, onTheClick, isLink = false }) {```
 
-## Learn More
+I made isLink false by default so I didn't have to mess with the other times I called Button on actual buttons
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Design Descisions
+Where should I put the state?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+First I had it in the Shop.js component, that encompassed the item list and the side cart which was all I needed.  Then I switched to the home page and back to the shop and all the data was gone. So I put the data up a level into the App.js component which included the Home and the Shop page, so now the data is saved between those.
 
-### Code Splitting
+I started off making a few states but realized they might need to depend on each other so I settled one one large state called cart. it includes an item array and a few variables that help out in different places.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Future Improvements
+Things to add if I feel like it later:
 
-### Analyzing the Bundle Size
+Funny descriptions for items on each item page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Something more than an alert when you click the Checkout button.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Could put the state into localStorage and pull it back out when you come back to the site so that your cart data gets saved.
