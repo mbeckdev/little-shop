@@ -19,22 +19,24 @@ function Item({
 
   return (
     <div className={styles.itemPage}>
-      <div className={styles.imgContainer}>
-        <img src={imgPath} alt={item.altText} />
-      </div>
-      <div className={styles.infoContainer}>
-        <h2 className={itemId}>{item.name}</h2>
-        <div className={styles.itemPrice}>${item.price}</div>
-        <div>
-          <Button
-            buttonType="special"
-            text="Add to Cart"
-            onTheClick={(e) => {
-              handleAddToCart(e, item);
-            }}
-          />
+      <div className={styles.imgAndInfo}>
+        <div className={styles.imgContainer}>
+          <img src={imgPath} alt={item.altText} />
         </div>
-        <div className={styles.description}>{item.description}</div>
+        <div className={styles.infoContainer}>
+          <h2 className={itemId}>{item.name}</h2>
+          <div className={styles.itemPrice}>${item.price}</div>
+          <div>
+            <Button
+              buttonType="special"
+              text="Add to Cart"
+              onTheClick={(e) => {
+                handleAddToCart(e, item);
+              }}
+            />
+          </div>
+          <div className={styles.description}>{item.description}</div>
+        </div>
       </div>
       {cart.somethingInCart && (
         <SideCart
