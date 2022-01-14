@@ -171,7 +171,7 @@ const App = () => {
   const handleCheckout = (e) => {
     // e.preventDefault();
     alert(
-      "Oh no! Checkout isn't part of this project, \r but if it did exist it would be here"
+      "Oh no! Checkout isn't part of this project, \r but if it did exist it would be here."
     );
   };
 
