@@ -17,7 +17,7 @@ function ShopItem(props) {
     >
       <div className={(styles.shopItem, 'shopItem')}>
         <div className={styles.shopItemContainer}>
-          <img src={imgPath} alt={item.altText} />
+          <img src={imgPath} alt={item.altText} loading="lazy" />
           <div className={styles.shopItemTitle}>{item.name}</div>
           <div className={styles.shopItemPrice}>${item.price}</div>
 

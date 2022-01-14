@@ -19,7 +19,11 @@ function SideCart({
         {cart.items.map((itemInCart) => (
           <div key={itemInCart.id} className={styles.sideCartItem}>
             <div className={styles.sideCartSectionA}>
-              <img src={itemInCart.img} alt={itemInCart.altText} />
+              <img
+                src={itemInCart.img}
+                alt={itemInCart.altText}
+                loading="lazy"
+              />
               {/* <img src={imgPath} alt={item.altText} /> */}
               <div className={styles.sideCartSectionA_A}>
                 <div className={styles.shopItemTitle}>{itemInCart.name}</div>
