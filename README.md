@@ -2,11 +2,17 @@
 
 [Check it out here!](https://mbeckdev.github.io/little-shop/)
 
+![image](https://user-images.githubusercontent.com/4518809/149596445-fb5b2563-2e2a-4d0d-8a89-27f47e9a726d.png)
+
 A little front end of a shop using React Hooks, react-router-dom, and CSS Modules
 
 There is a list of items, and when you add them to the cart, the cart updates with that item and has addintion and subtraction buttons, and a place to type in the amount you want. When you add things to the cart the subtotal updates.
 
+![mini-jungle2](https://user-images.githubusercontent.com/4518809/149596682-d20f19eb-1580-4a46-9955-b612e7c75eea.jpg)
+
 There is a Home page and a Shop page, and pages for each of the items. The cart shows up when there is something in the cart.
+
+![mini-jungle3](https://user-images.githubusercontent.com/4518809/149596837-e27e3d11-ba68-4467-81ca-b3d24d19fc34.jpg)
 
 ## Why
 
@@ -67,8 +73,6 @@ I started off making a few states but realized they might need to depend on each
 ## Future Improvements
 Things to add if I feel like it later:
 
-Funny descriptions for items on each item page.
-
-Something more than an alert when you click the Checkout button.
-
-Could put the state into localStorage and pull it back out when you come back to the site so that your cart data gets saved.
+* Funny descriptions for items on each item page.
+* Something more than an alert when you click the Checkout button.
+* Put the state into localStorage and pull it back out when you come back to the site so that your cart data gets saved.
