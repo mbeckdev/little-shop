@@ -2,6 +2,12 @@
   width: 300px;
 } */
 
+.itemPage {
+  display: flex;
+  /* flex-direction: row; */
+  border: 1px solid red;
+}
+
 .itemContainerRow {
   display: flex;
   justify-content: center;
