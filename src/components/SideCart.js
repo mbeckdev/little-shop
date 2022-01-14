@@ -11,7 +11,6 @@ function SideCart({
   handleQtyChange,
   handleCheckout,
 }) {
-  console.log(cart);
   return (
     <div className={styles.sideCart}>
       <h2>CART</h2>

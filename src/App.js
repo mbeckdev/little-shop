@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styles from './app.module.css';
 
-import React, { useState, useEffect } from 'react';
-// import App from './App';
-// import './App.css';
+import React, { useState } from 'react';
+
 import Navbar from './Navbar';
 import Shop from './pages/Shop';
 import Home from './pages/Home';
@@ -17,13 +16,9 @@ const App = () => {
 
     items: [],
   });
-  useEffect(() => {
-    console.log('cart updated');
-  }, [cart]);
 
   const handleAddToCart = (e, clickedItem) => {
     e.preventDefault();
-    console.log('Add to cart clicked from shopitem');
 
     let tempCart = _getCartBeforeChange();
 
@@ -38,11 +33,8 @@ const App = () => {
     // update items
     let tempItems = [...cart.items];
 
-    console.log('clickedItem', clickedItem);
-    console.log('tempItems', tempItems);
+    // make items smaller and add quantities to them
 
-    // make items smaller and add qties to them
-    console.log('dur', clickedItem.qty);
     // if clicked item is already in the cart, dont add it, just increment qty
     // is clicked item already in cart?
 
@@ -50,7 +42,6 @@ const App = () => {
     let isItemAlreadyInCart = false;
     for (let i = 0; i < cart.items.length; i++) {
       if (tempCart.items[i].id === clickedItem.id) {
-        console.log('exists already');
         isItemAlreadyInCart = true;
         tempCart.items[i].qty = tempCart.items[i].qty + 1;
       }
@@ -88,10 +79,7 @@ const App = () => {
       tempCart.somethingInCart = false;
     }
 
-    console.log(tempCart);
-
     tempCart.items = tempCartWithoutItems.items;
-    console.log(tempCart);
     setCart(tempCart);
   };
 
@@ -169,7 +157,6 @@ const App = () => {
   };
 
   const handleCheckout = (e) => {
-    // e.preventDefault();
     alert(
       "Oh no! Checkout isn't part of this project, \r but if it did exist it would be here."
     );
@@ -214,9 +201,7 @@ const App = () => {
       <div className={styles.app}>
         <Navbar />
         <Routes>
-          {/* <Route index element={<Navbar />} /> */}
-          <Route index element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/little-shop" element={<Home />} />
 
           <Route
             path="/shop"
