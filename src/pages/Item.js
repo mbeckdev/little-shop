@@ -11,6 +11,7 @@ function Item({
   handleSubtractFromCart,
   handleDeleteFromCart,
   handleQtyChange,
+  handleCheckout,
 }) {
   // const navigate = useNavigate();
   const { itemId } = useParams();
@@ -45,6 +46,7 @@ function Item({
           handleSubtractFromCart={handleSubtractFromCart}
           handleDeleteFromCart={handleDeleteFromCart}
           handleQtyChange={handleQtyChange}
+          handleCheckout={handleCheckout}
         />
       )}
     </div>

@@ -19,6 +19,8 @@ function Shop({
   handleSubtractFromCart,
   handleDeleteFromCart,
   handleQtyChange,
+  handleSideCart,
+  handleCheckout,
 }) {
   let shopItemsClassName;
   if (cart.somethingInCart) {
@@ -64,6 +66,8 @@ function Shop({
             handleSubtractFromCart={handleSubtractFromCart}
             handleDeleteFromCart={handleDeleteFromCart}
             handleQtyChange={handleQtyChange}
+            handleSideCart={handleSideCart}
+            handleCheckout={handleCheckout}
           />
         )}
       </div>

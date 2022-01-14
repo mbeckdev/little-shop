@@ -168,6 +168,13 @@ const App = () => {
     }
   };
 
+  const handleCheckout = (e) => {
+    // e.preventDefault();
+    alert(
+      "Oh no! Checkout isn't part of this project, \r but if it did exist it would be here"
+    );
+  };
+
   function _findNumberInCartFromItems(cartItems) {
     let numberInCart = 0;
     for (let i = 0; i < cartItems.length; i++) {
@@ -221,6 +228,7 @@ const App = () => {
                 handleSubtractFromCart={handleSubtractFromCart}
                 handleDeleteFromCart={handleDeleteFromCart}
                 handleQtyChange={handleQtyChange}
+                handleCheckout={handleCheckout}
               />
             }
           />
@@ -233,6 +241,7 @@ const App = () => {
                 handleSubtractFromCart={handleSubtractFromCart}
                 handleDeleteFromCart={handleDeleteFromCart}
                 handleQtyChange={handleQtyChange}
+                handleCheckout={handleCheckout}
               />
             }
           />

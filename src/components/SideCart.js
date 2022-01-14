@@ -9,6 +9,7 @@ function SideCart({
   handleSubtractFromCart,
   handleDeleteFromCart,
   handleQtyChange,
+  handleCheckout,
 }) {
   console.log(cart);
   return (
@@ -72,7 +73,11 @@ function SideCart({
         <div className={styles.subTotalPrice}>${cart.total.toFixed(2)}</div>
       </div>
 
-      <Button text="Checkout" buttonType="special" />
+      <Button
+        text="Checkout"
+        buttonType="special"
+        onTheClick={handleCheckout}
+      />
     </div>
   );
 }
