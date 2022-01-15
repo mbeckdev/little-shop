@@ -22,12 +22,12 @@ deleting times, choosing which component to keep the state in.
 ### Some Fun Dependencies Used
 
 * uniqid -- it creates a unique identifier 
- * (You should always use a unique key when mapping items in JSX)
+  * (You should always use a unique key when mapping items in JSX)
 * react-router-dom 
- * helps you make it look like there are actual pages in a website when really it's just
+  * helps you make it look like there are actual pages in a website when really it's just
 a single page app (SPA). You can route components to different url paths.
 * fortawesome -- free icons from fontawesome
- * the shopping cart icon is from there
+  * the shopping cart icon is from there
  
 ### An exercise from The Odin Project
 I made this as an exercise for the Odin Project.
