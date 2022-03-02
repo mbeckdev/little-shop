@@ -15,7 +15,9 @@ function Item({
 }) {
   // const navigate = useNavigate();
   const { itemId } = useParams();
+
   const location = useLocation();
+  console.log('after location=', location);
   const { item, imgPath } = location.state;
 
   return (
@@ -54,13 +56,3 @@ function Item({
 }
 
 export default Item;
-
-//<div className={(styles.item, 'item')}>
-//       <div className={styles.itemContainerRow}>
-//         <div className={styles.itemContainer}>
-//           <img src={imgPath} alt={item.altText} />
-//            <div className={styles.itemTitle}>{item.name}</div>
-//            <div className={styles.itemPrice}>${item.price}</div>
-//          </div>
-//        </div>
-//      </div>

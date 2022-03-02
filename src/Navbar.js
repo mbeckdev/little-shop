@@ -6,13 +6,13 @@ const Navbar = () => {
   return (
     <nav>
       <h1 className={styles.headerLogo}>
-        <Link to="/home">Mini Jungle</Link>
+        <Link to="/little-shop/">Mini Jungle</Link>
       </h1>
       <ul className={styles.navLinks}>
-        <Link to="/home">
+        <Link to="/little-shop/">
           <li>Home</li>
         </Link>
-        <Link to="/shop">
+        <Link to="/little-shop/shop">
           <li>Shop</li>
         </Link>
       </ul>

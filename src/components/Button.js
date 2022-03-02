@@ -20,7 +20,7 @@ function Button({ buttonType, text, onTheClick, isLink = false }) {
   );
 
   let returnALink = (
-    <Link to="/shop">
+    <Link to="/little-shop/shop">
       <button className={determinedStyle} onClick={onTheClick}>
         {text}
       </button>

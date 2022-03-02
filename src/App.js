@@ -201,10 +201,11 @@ const App = () => {
       <div className={styles.app}>
         <Navbar />
         <Routes>
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/little-shop" element={<Home />} />
 
           <Route
-            path="/shop"
+            path="/little-shop/shop"
             element={
               <Shop
                 cart={cart}
@@ -218,7 +219,7 @@ const App = () => {
             }
           />
           <Route
-            path="/shop/:itemId"
+            path="/little-shop/shop/:itemId"
             element={
               <Item
                 cart={cart}

@@ -9,7 +9,7 @@ function ShopItem(props) {
   return (
     <NavLink
       key={item.id}
-      to={`/shop/${item.name}`}
+      to={`/little-shop/shop/${item.name}`}
       state={{
         item: item,
         imgPath: imgPath,
