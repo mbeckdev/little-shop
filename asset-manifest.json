@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/little-shop/static/css/main.f735e2bc.css",
-    "main.js": "/little-shop/static/js/main.9cbe2242.js",
+    "main.js": "/little-shop/static/js/main.87e61ced.js",
     "static/media/background-plants.jpg": "/little-shop/static/media/background-plants.5e369aca3a9f5e104a47.jpg",
     "static/media/plant7.jpg": "/little-shop/static/media/plant7.41655014ba58328abf42.jpg",
     "static/media/plant3.jpg": "/little-shop/static/media/plant3.e5673a6f31e3ca56c84d.jpg",
@@ -13,10 +13,10 @@
     "static/media/plant5.jpg": "/little-shop/static/media/plant5.6cb8cbb3d9fde4769f23.jpg",
     "index.html": "/little-shop/index.html",
     "main.f735e2bc.css.map": "/little-shop/static/css/main.f735e2bc.css.map",
-    "main.9cbe2242.js.map": "/little-shop/static/js/main.9cbe2242.js.map"
+    "main.87e61ced.js.map": "/little-shop/static/js/main.87e61ced.js.map"
   },
   "entrypoints": [
     "static/css/main.f735e2bc.css",
-    "static/js/main.9cbe2242.js"
+    "static/js/main.87e61ced.js"
   ]
 }
