@@ -4,7 +4,7 @@
 
 ![image](https://user-images.githubusercontent.com/4518809/149596445-fb5b2563-2e2a-4d0d-8a89-27f47e9a726d.png)
 
-A little front end of a shop using React Hooks, react-router-dom, and CSS Modules
+A front end of a shop using React Hooks, react-router-dom, and CSS Modules.
 
 There is a list of items, and when you add them to the cart, the cart updates with that item and has addintion and subtraction buttons, and a place to type in the amount you want. When you add things to the cart the subtotal updates.
 
@@ -65,7 +65,7 @@ I made a component just for a buttons. I wanted to use styling of a button for t
 
 `function Button({ buttonType, text, onTheClick, isLink = false }) {`
 
-I made isLink false by default so I didn't have to mess with the other times I called Button on actual buttons
+I made isLink false by default so I didn't have to mess with the other times I called Button on actual buttons.
 
 ## Design Descisions
 
