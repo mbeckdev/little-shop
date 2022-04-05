@@ -6,7 +6,7 @@
 
 A front end of a shop using React Hooks, react-router-dom, and CSS Modules.
 
-There is a list of items, and when you add them to the cart, the cart updates with that item and has addintion and subtraction buttons, and a place to type in the amount you want. When you add things to the cart the subtotal updates.
+There is a list of items, and when you add them to the cart, the cart updates with that item and has addition and subtraction buttons, and a place to type in the amount you want. When you add things to the cart the subtotal updates.
 
 ![mini-jungle2](https://user-images.githubusercontent.com/4518809/149596682-d20f19eb-1580-4a46-9955-b612e7c75eea.jpg)
 
@@ -33,7 +33,7 @@ deleting times, choosing which component to keep the state in.
 
 I made this as an exercise for the Odin Project.
 
-They're directions are like: make a shopping cart, it should have this functionality in it. Also use react-router-dom. Go!
+Their directions are mostly: make a shopping cart, it should have this functionality in it. Also use react-router-dom. Go!
 
 [Shopping Cart Project Guidelines](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/shopping-cart)
 
@@ -51,7 +51,7 @@ Kind of like this:
 
 ## What I learned
 
-how to use that tricky /:variable part of react-router-dom so that you don't have to create 8 different individual pages or components, just one page that takes the variable.
+I learned how to use that tricky /:variable part of react-router-dom so that you don't have to create 8 different individual pages or components, just one page that takes the variable.
 
 You can pass variables in the react-router-dom `<Link />` component!
 
@@ -59,7 +59,7 @@ You can pass variables in the react-router-dom `<Link />` component!
 
 Ok, I wonder if there's a better way for this, but my navbar is 5vh (5% of the vertical height of the screen) and the Home.js is 95vh, which together make up 100% of the vertical screen, which looks fine I suppose. Another method I've done in other projects is to make the Home.js screen 100vh and then make the navbar some height, but lay it on top of the Home.js screen using "postion: absolute" but then part of the picture of the Home.js is eclipsed/it can't be seen.
 
-CSS Modules makes it difficult to use id's. Using classes instead is fine. A few people told me that's what they do when they use CSS Modules.
+CSS Modules makes it difficult to use id's. Using classes instead is fine. I asked around and a few people told me that's what they do when they use CSS Modules.
 
 I made a component just for a buttons. I wanted to use styling of a button for the 'Shop Now' button on the home screen but it's actually a link, so I made some logic in the Button.js component so it works.
 
