@@ -7,12 +7,10 @@
 
 .sideCart {
   min-width: 200px;
-  /* border-left: 1px solid primary; */
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: 1px solid orange; */
   margin-top: 0.5rem;
 }
 
@@ -35,18 +33,13 @@
 .sideCart h2 {
   font-size: 24px;
   font-family: 'Playfair Display', serif;
-  /* font-family: 'Fredericka the Great', cursive; */
   font-weight: 700;
 
-  /* position: absolute; */
-  /* top: 0; */
-  /* border: 1px solid red; */
   margin-bottom: 1rem;
 }
 
 .sideCartItemContainer {
   width: 100%;
-  /* border: 1px solid blue; */
 }
 
 .sideCartItem img {
@@ -59,7 +52,6 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  /* border: 1px solid yellow; */
 }
 
 .sideCartSectionA {
@@ -67,13 +59,10 @@
   display: flex;
   justify-content: flex-start;
   padding-left: 15px;
-  /* border: 1px solid blue; */
 }
 
 .sideCartSectionA_A {
   display: flex;
-  /* flex-direction: column; */
-  /* border: 1px solid green; */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -84,8 +73,6 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 0 10px 0;
-
-  /* border: 1px solid red; */
 }
 
 .sideCartSectionB_qtyContainer {
@@ -104,11 +91,8 @@
 .sideCart input {
   background-color: transparent;
   text-align: center;
-  /* border-radius: 5px; */
   border: 1px solid green3;
-  /* border: none; */
   padding: 0px 7px;
-  /* height: 1rem; */
   height: 100%;
 }
 
@@ -126,6 +110,5 @@
 
 .sideCart .shopItemPrice,
 .subTotalPrice {
-  /* color: blue; */
   padding-right: 5px;
 }
